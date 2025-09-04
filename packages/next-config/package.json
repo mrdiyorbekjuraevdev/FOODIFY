@@ -1,5 +1,5 @@
 {
-  "name": "@repo/next-config",
+  "name": "@foodify/next-config",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
+    "@foodify/typescript-config": "workspace:*",
     "next": "15.3.2"
   },
   "dependencies": {

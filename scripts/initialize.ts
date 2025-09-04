@@ -78,7 +78,7 @@ const setupOrm = async (packageManager: string) => {
     'run',
     'build',
     filterCommand,
-    '@repo/database',
+    '@foodify/database',
   ].join(' ');
 
   await exec(command, execSyncOpts);
