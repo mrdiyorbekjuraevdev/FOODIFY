@@ -1,7 +1,5 @@
+import { DashboardView } from "@/views/dashboard";
+
 export default function Dashboard() {
-    return (
-        <div>
-            <h1>Dashboardawd</h1>
-        </div>
-    );
+    return <DashboardView />
 };

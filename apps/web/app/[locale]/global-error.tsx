@@ -1,6 +1,5 @@
 'use client';
 
-import { fonts } from '@foodify/design-system/lib/fonts';
 import type NextError from 'next/error';
 
 type GlobalErrorProperties = {
@@ -11,7 +10,7 @@ type GlobalErrorProperties = {
 const GlobalError = ({ error, reset }: GlobalErrorProperties) => {
 
   return (
-    <html lang="en" className={fonts}>
+    <html lang="en">
       <body>
         <h1>Oops, something went wrong</h1>
         <button onClick={() => reset()}>Try again</button>

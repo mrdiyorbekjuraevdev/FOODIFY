@@ -1,4 +1,4 @@
-import { getDictionary } from '@repo/internationalization';
+import { getDictionary } from '@foodify/internationalization';
 
 
 type SignUpProps = {

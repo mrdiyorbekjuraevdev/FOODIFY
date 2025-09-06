@@ -1,5 +1,5 @@
 {
-  "extends": "@foodify/typescript-config/nextjs.json", 
+  "extends": "@foodify/typescript-config/nextjs.json",
   "compilerOptions": {
     "baseUrl": ".",
     "plugins": [
@@ -8,10 +8,19 @@
       }
     ],
     "paths": {
-      "@foodify/*": ["../*"],
-      "@foodify/design-system/*": ["./*"]
+      "@foodify/*": [
+        "../*"
+      ],
+      "@foodify/design-system/*": [
+        "./*"
+      ]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

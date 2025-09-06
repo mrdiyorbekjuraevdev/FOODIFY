@@ -1,8 +1,8 @@
 import '../styles.css';
-import { DesignSystemProvider } from '@repo/design-system';
-import { fonts } from '@repo/design-system/lib/fonts';
-import { cn } from '@repo/design-system/lib/utils';
+import { DesignSystemProvider } from '@foodify/design-system';
+import { cn } from '@foodify/design-system/lib/utils';
 import type { ReactNode } from 'react';
+import { Inter } from 'next/font/google';
 
 type RootLayoutProperties = {
   readonly children: ReactNode;
@@ -11,13 +11,19 @@ type RootLayoutProperties = {
   }>;
 };
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
 const RootLayout = async ({ children, params }: RootLayoutProperties) => {
   const { locale } = await params;
 
   return (
     <html
       lang="en"
-      className={cn(fonts, 'scroll-smooth')}
+      className={cn(inter.variable, 'scroll-smooth')}
       suppressHydrationWarning
     >
       <body className='bg-red-500'>
