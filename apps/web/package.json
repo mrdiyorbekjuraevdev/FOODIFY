@@ -10,13 +10,16 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@radix-ui/react-icons": "^1.3.2",
     "@foodify/design-system": "workspace:*",
     "@foodify/internationalization": "workspace:*",
     "@foodify/next-config": "workspace:*",
+    "@foodify/auth": "workspace:*",
+    "@foodify/api": "workspace:*",
+    "@radix-ui/react-icons": "^1.3.2",
     "@t3-oss/env-nextjs": "^0.13.4",
     "date-fns": "^4.1.0",
-    "fumadocs-core": "^15.4.0", 
+    "formik": "^2.4.6",
+    "fumadocs-core": "^15.4.0",
     "import-in-the-middle": "^1.13.2",
     "lucide-react": "^0.511.0",
     "mdx-bundler": "^10.1.1",

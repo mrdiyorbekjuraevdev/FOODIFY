@@ -26,6 +26,8 @@
     "@foodify/typescript-config": "workspace:*",
     "@turbo/gen": "^2.5.3",
     "@types/node": "^22.15.21",
+    "nuqs": "^2.6.0",
+    "sonner": "^2.0.7",
     "tsup": "^8.5.0",
     "turbo": "^2.5.3",
     "typescript": "^5.8.3",

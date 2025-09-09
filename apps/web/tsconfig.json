@@ -1,6 +1,6 @@
 {
   "extends": [
-    "@foodify/typescript-config/nextjs.json"    
+    "@foodify/typescript-config/nextjs.json"
   ],
   "compilerOptions": {
     "baseUrl": ".",

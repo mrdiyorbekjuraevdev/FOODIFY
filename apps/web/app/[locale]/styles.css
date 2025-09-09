@@ -1,1 +1,39 @@
 @import "@foodify/design-system/styles/globals.css";
+
+:root {
+    --main-background: #fafafa;
+
+    --sidebar-background: var(--main-background);
+    --sidebar-foreground: #3f3f46;
+    --sidebar-primary: #18181b;
+    --sidebar-primary-foreground: #fafafa;
+    --sidebar-accent: #f4f4f5;
+    --sidebar-accent-foreground: #18181b;
+    --sidebar-border: #e5e7eb;
+    --sidebar-ring: #3b82f6;
+    --sidebar-rail: #27cf2760;
+    --sidebar-item-hover: #27cf2760;
+}
+
+.dark {
+    --main-background: rgb(9, 14, 20);
+
+    --sidebar-background: "#13181D";
+    --sidebar-foreground: #f4f4f5;
+    --sidebar-primary: #fafafa;
+    --sidebar-primary-foreground: #18181b;
+    --sidebar-accent: #27272a;
+    --sidebar-accent-foreground: #f4f4f5;
+    --sidebar-border: #27272a;
+    --sidebar-ring: #3b82f6;
+    --sidebar-rail: #22e922b7;
+    --sidebar-item-hover: #27cf2760;
+}
+
+.sidenav__bg {
+    background: #13181D;
+    background: linear-gradient(0deg,
+            #13181D,
+            #13181D 86%,
+            #122908 100%);
+}

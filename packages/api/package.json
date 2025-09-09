@@ -1,0 +1,18 @@
+{
+  "name": "@foodify/api",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "@foodify/auth": "workspace:*",
+    "@tanstack/react-query": "^5.87.1",
+    "@tanstack/react-query-devtools": "^5.87.3",
+    "@types/react": "^19.1.12",
+    "axios": "^1.11.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}

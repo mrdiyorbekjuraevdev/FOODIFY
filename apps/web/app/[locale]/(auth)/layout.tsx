@@ -3,6 +3,7 @@ import { DesignSystemProvider } from '@foodify/design-system';
 import { cn } from '@foodify/design-system/lib/utils';
 import type { ReactNode } from 'react';
 import { Inter } from 'next/font/google';
+import { Providers } from '@/providers';
 
 type RootLayoutProperties = {
   readonly children: ReactNode;
@@ -26,10 +27,10 @@ const RootLayout = async ({ children, params }: RootLayoutProperties) => {
       className={cn(inter.variable, 'scroll-smooth')}
       suppressHydrationWarning
     >
-      <body className='bg-red-500'>
-        <DesignSystemProvider>
+      <body className={`${inter.className}} antialiased`}>
+        <Providers>
           {children}
-        </DesignSystemProvider>
+        </Providers>
       </body>
     </html>
   );

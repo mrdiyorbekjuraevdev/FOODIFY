@@ -1,5 +1,5 @@
 import { getDictionary } from '@foodify/internationalization';
-
+import { SignIn as SignInPage } from '@/views/auth/sign-in';
 
 type SignInProps = {
   params: Promise<{
@@ -7,16 +7,12 @@ type SignInProps = {
   }>;
 };
 
-
-
 const SignIn = async ({ params }: SignInProps) => {
   const { locale } = await params;
   const dictionary = await getDictionary(locale);
 
   return (
-    <>
-      <h1>Sign In</h1>
-    </>
+    <SignInPage />
   );
 };
 
