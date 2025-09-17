@@ -11,7 +11,6 @@ interface FoodifyAuthProviderProps {
 const FoodifyAuthProvider = ({
     children,
 }: FoodifyAuthProviderProps) => {
-
     const [store, setStore] = useState<any | null>(null);
 
     useEffect(() => {
@@ -26,6 +25,8 @@ const FoodifyAuthProvider = ({
     }, []);
 
     if (!store) return null;
+
+    
 
 
     return (

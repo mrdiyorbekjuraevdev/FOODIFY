@@ -3,6 +3,16 @@
 :root {
     --main-background: #fafafa;
 
+
+    --layer-01: #fafafa;
+
+    --fe-backgorund-hover: rgba(141, 141, 141, 0.12);
+
+
+    /* BORDERS */
+    --border-subtle-01: "#fafafa";
+
+    /* SIDEBAR */
     --sidebar-background: var(--main-background);
     --sidebar-foreground: #3f3f46;
     --sidebar-primary: #18181b;
@@ -13,11 +23,21 @@
     --sidebar-ring: #3b82f6;
     --sidebar-rail: #27cf2760;
     --sidebar-item-hover: #27cf2760;
+
+
 }
 
 .dark {
     --main-background: rgb(9, 14, 20);
 
+    --layer-01: #090e14;
+
+    --fe-backgorund-hover: rgba(141, 141, 141, 0.16);
+
+    /* BORDERS */
+    --border-subtle-01: "#13181d";
+
+    /* SIDEBAR */
     --sidebar-background: "#13181D";
     --sidebar-foreground: #f4f4f5;
     --sidebar-primary: #fafafa;
@@ -36,4 +56,9 @@
             #13181D,
             #13181D 86%,
             #122908 100%);
+}
+
+
+.active-icon>svg>path {
+    stroke: #60d431 !important;
 }

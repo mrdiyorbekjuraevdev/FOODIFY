@@ -1,11 +1,17 @@
 {
   "locale": {
     "source": "en",
-    "targets": ["es", "de", "zh", "fr", "pt"]
+    "targets": [
+      "ru",
+      "uz",
+      "en"
+    ]
   },
   "files": {
     "json": {
-      "include": ["dictionaries/[locale].json"]
+      "include": [
+        "dictionaries/[locale].json"
+      ]
     }
   }
 }

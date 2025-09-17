@@ -8,6 +8,7 @@ import { NextAuth } from '@foodify/auth';
 
 // STYLES
 import '../styles.css';
+import { Header } from '@/components/header';
 
 type RootLayoutProperties = {
   readonly children: ReactNode;
@@ -39,6 +40,7 @@ const RootLayout = async ({ children, params }: RootLayoutProperties) => {
               <SidebarProvider>
                 <Sidebar />
                 <SidebarInset>
+                  <Header />
                   {children}
                 </SidebarInset>
               </SidebarProvider>

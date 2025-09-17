@@ -1,5 +1,6 @@
 import { getDictionary } from '@foodify/internationalization';
 import { SignIn as SignInPage } from '@/views/auth/sign-in';
+import { withAuthenticatedRoute } from '@/config';
 
 type SignInProps = {
   params: Promise<{

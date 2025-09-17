@@ -1,10 +1,11 @@
 import httpClient from "@foodify/api/lib/axios-client";
 import createRefresh from "react-auth-kit/createRefresh";
+import { get } from "lodash";
 
 type TData = {
     data: {
-        accessToken: string;
-        refreshToken: string;
+        access_token: string;
+        refresh_token: string;
     };
 };
 
@@ -13,13 +14,13 @@ export const refresh = createRefresh({
     //@ts-ignore
     refreshApiCallback: async (param) => {
         try {
-            const response = await httpClient.post<TData>("auth/refresh", param, {
+            const { data } = await httpClient.post<TData>("refresh", param, {
                 headers: { Authorization: `Bearer ${param.authToken}` },
             });
-            console.log("Refreshing", response, param);
+            console.log("refreshed", data); 
             return {
                 isSuccess: true,
-                newAuthToken: response?.data?.accessToken,
+                newAuthToken: get(data, "data.access_token"),
                 newAuthTokenExpireIn: 10,
                 newRefreshTokenExpiresIn: 60,
             };

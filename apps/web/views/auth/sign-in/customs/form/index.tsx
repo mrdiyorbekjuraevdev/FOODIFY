@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { memo, useMemo } from 'react'
 import { Card } from '@foodify/design-system/components/card';
 import { FastField, Field, FieldProps, Formik, Form as FormikForm } from 'formik';
 import { Input } from '@foodify/design-system/components/input';
@@ -9,6 +9,7 @@ import { Button } from '@foodify/design-system/components/button';
 import { Checkbox } from '@foodify/design-system/components/checkbox';
 import { ISignInForm } from '@/types/auth/sign-in';
 import { useSignInFeature } from '../../features';
+import Cookies from "js-cookie";
 
 const schema = z.object({
     phone: z
@@ -39,7 +40,7 @@ const validate = (values: ISignInForm) => {
     }
 };
 
-export const Form = () => {
+export const Form = memo(() => {
     const { onSubmit: { mutateAsync: onSubmit } } = useSignInFeature()
     const [isVisible, setIsVisible] = React.useState(false);
 
@@ -74,11 +75,20 @@ export const Form = () => {
 
                 {/* FORM */}
                 <div className="w-full flex flex-col gap-4">
-                    <Formik initialValues={initialValues} onSubmit={async (values) => {
-                        await onSubmit(values);
+                    <Formik enableReinitialize initialValues={initialValues} onSubmit={async (values) => {
+                        try {
+                            await onSubmit(values);
+
+                            if (values.rememberMe) {
+                                Cookies.set("remember_me", "true");
+                            } else {
+                                Cookies.set("remember_me", "false");
+                            }
+                        } catch (error) {
+                            console.log(error)
+                        }
                     }} validate={validate}>
                         {({ isSubmitting, values, isValid }) => {
-                            console.log(values)
                             return (
                                 <FormikForm>
                                     <div className='space-y-4'>
@@ -135,6 +145,7 @@ export const Form = () => {
                                                     <div className="flex items-center justify-between">
                                                         <Checkbox
                                                             color="default"
+                                                            checked={field.value}
                                                             {...field}
                                                         >
                                                             Eslab qolish
@@ -177,6 +188,6 @@ export const Form = () => {
                     telegram orqali biz bilan bog'laning!
                 </p>
             </Card>
-        </Card>
+        </Card >
     )
-}
+});

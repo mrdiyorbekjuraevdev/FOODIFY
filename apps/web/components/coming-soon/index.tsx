@@ -2,7 +2,7 @@
 
 const ComingSoon = () => {
 	return (
-		<div className="flex flex-col h-screen overflow-hidden">
+		<div className="flex-col h-[calc(100vh-65px)] overflow-hidden flex items-center justify-center">
 			Coming soon
 		</div>
 	);

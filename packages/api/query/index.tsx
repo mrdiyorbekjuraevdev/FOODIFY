@@ -3,7 +3,8 @@ import React from "react";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { useQueryClient, useMutation } from "@tanstack/react-query";
+import { useQueryClient, useMutation, useQuery } from "@tanstack/react-query";
+
 
 const CacheQueryProvider = ({ children, client }: { children: React.ReactNode, client: QueryClient }) => {
     return (
@@ -13,4 +14,4 @@ const CacheQueryProvider = ({ children, client }: { children: React.ReactNode, c
 
 
 
-export { CacheQueryProvider, useQueryClient, useMutation, QueryClient }
+export { CacheQueryProvider, useQueryClient, useMutation, QueryClient, useQuery }

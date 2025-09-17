@@ -4,6 +4,7 @@ import { cn } from '@foodify/design-system/lib/utils';
 import type { ReactNode } from 'react';
 import { Inter } from 'next/font/google';
 import { Providers } from '@/providers';
+import { NextAuth } from '@foodify/auth';
 
 type RootLayoutProperties = {
   readonly children: ReactNode;

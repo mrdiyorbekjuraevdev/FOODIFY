@@ -14,6 +14,7 @@ const config = {
         mono: ["var(--font-mono)"],
       },
       colors: {
+        
 
       },
     },
