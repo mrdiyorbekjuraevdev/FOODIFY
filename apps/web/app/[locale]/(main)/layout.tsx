@@ -5,10 +5,12 @@ import { SidebarInset, SidebarProvider } from '@foodify/design-system/components
 import { Sidebar } from '@/components/sidebar/sidebar';
 import { Providers } from '@/providers';
 import { NextAuth } from '@foodify/auth';
+import { Header } from '@/components/header';
+import { utilitiesCache } from '@/servers/main/shared/utils';
+import { HydrationBoundary } from '@foodify/api/query';
 
 // STYLES
 import '../styles.css';
-import { Header } from '@/components/header';
 
 type RootLayoutProperties = {
   readonly children: ReactNode;
@@ -25,7 +27,7 @@ const inter = Inter({
 
 
 const RootLayout = async ({ children, params }: RootLayoutProperties) => {
-  const { locale } = await params;
+  const dehydratedState = await utilitiesCache();
 
   return (
     <html
@@ -39,10 +41,12 @@ const RootLayout = async ({ children, params }: RootLayoutProperties) => {
             <NextAuth fallbackPath={"/sign-in"}>
               <SidebarProvider>
                 <Sidebar />
-                <SidebarInset>
-                  <Header />
-                  {children}
-                </SidebarInset>
+                <HydrationBoundary state={dehydratedState}>
+                  <SidebarInset>
+                    <Header />
+                    {children}
+                  </SidebarInset>
+                </HydrationBoundary>
               </SidebarProvider>
             </NextAuth>
           </Providers>

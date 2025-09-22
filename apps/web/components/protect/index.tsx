@@ -59,7 +59,7 @@ export const Protect = ({
     userRoles = [],
     requireAllActions = true,
 }: PermissionGuardProps) => {
-    const { user: { data: data } } = useUserMeCache();
+    const { user: { data: data, isLoading } } = useUserMeCache();
 
     // Resource/action-based permission check
     const hasResourceAccess = useMemo(() => {
@@ -74,7 +74,7 @@ export const Protect = ({
 
         return data?.permissions.some((perm) => {
             // Check if permission is for the requested resource
-            if (perm?.permission !== resource) return false;
+            if (perm?.permission.toLowerCase() !== resource.toLowerCase()) return false;
 
             // If no actions specified, just having the resource is enough
             if (!requiredActions.length) return true;
@@ -92,15 +92,16 @@ export const Protect = ({
         });
     }, [resource, actions, requireAllActions]);
 
+    if (isLoading) return null;
     // Handle loading state if auth is still being determined
     if (data === undefined) return <>{loading}</>;
 
     // Owner override - they get access to everything
-    if (data?.roles[0].role === "director") return <>{children}</>;
+    if (data?.role === "MANAGER") return <>{children}</>;
 
     // Role-based check
-    if (userRoles?.length > 0 && data?.roles[0].role) {
-        if (userRoles.includes(data?.roles[0].role)) return <>{children}</>;
+    if (userRoles?.length > 0 && data?.role) {
+        if (userRoles.includes(data?.role)) return <>{children}</>;
     }
 
     // Custom condition check
@@ -134,4 +135,64 @@ export const ProtectRole = ({
             {children}
         </Protect>
     );
+};
+
+
+
+interface UsePermissionOptions {
+    resource?: string;
+    actions?: PermissionAction | PermissionAction[];
+    userRoles?: string[];
+    requireAllActions?: boolean; // AND (true) or OR (false)
+}
+/**
+ * Hook for checking user permissions, roles, and access conditions
+ * Similar to Clerk's useAuth/usePermission
+ */
+export const usePermission = ({
+    resource,
+    actions,
+    userRoles = [],
+    requireAllActions = true,
+}: UsePermissionOptions = {}) => {
+    const { user: { data, isLoading } } = useUserMeCache();
+
+    const hasPermission = useMemo(() => {
+        if (!data) return false;
+
+        // Manager override
+        if (data?.role === "MANAGER") return true;
+
+        // Role-based check
+        if (userRoles.length && data?.role) {
+            if (userRoles.includes(data.role)) return true;
+        }
+
+        // Resource-based check
+        if (resource) {
+            const requiredActions = actions
+                ? Array.isArray(actions)
+                    ? actions
+                    : [actions]
+                : [];
+
+            return data.permissions.some((perm) => {
+                if (perm?.permission.toLowerCase() !== resource.toLowerCase()) return false;
+
+                if (!requiredActions.length) return true;
+
+                return requireAllActions
+                    ? requiredActions.every((a: PermissionAction) => perm.actions.includes(a as any))
+                    : requiredActions.some((a: PermissionAction) => perm.actions.includes(a as any));
+            });
+        }
+
+        return false;
+    }, [data, resource, actions, userRoles, requireAllActions]);
+
+    return {
+        isLoading,
+        user: data,
+        hasPermission,
+    };
 };

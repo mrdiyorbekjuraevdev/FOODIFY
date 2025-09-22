@@ -12,6 +12,9 @@
     /* BORDERS */
     --border-subtle-01: "#fafafa";
 
+
+    --fe-text-primary: #292929;
+
     /* SIDEBAR */
     --sidebar-background: var(--main-background);
     --sidebar-foreground: #3f3f46;
@@ -36,6 +39,8 @@
 
     /* BORDERS */
     --border-subtle-01: "#13181d";
+
+    --fe-text-primary: #fdfdfd;
 
     /* SIDEBAR */
     --sidebar-background: "#13181D";

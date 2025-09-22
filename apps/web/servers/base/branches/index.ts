@@ -1,7 +1,7 @@
 import { useFetch } from "@foodify/api/hooks/useFetch";
 import { useQuery } from "@foodify/api/query";
 import { toast } from "sonner";
-import { TData } from "@/types/base";
+import { TDataSingle } from "@/types/base";
 import { QueryResult } from "@foodify/api/types";
 import { TBranch } from "@/types/base";
 
@@ -20,7 +20,7 @@ export const useBranchesCache = (): TBranchesCache => {
         queryKey: ["branches"],
         queryFn: async () => {
             try {
-                const { data } = await functionInvoke<TData<TBranch[]>>({
+                const { data } = await functionInvoke<TDataSingle<TBranch[]>>({
                     functionName: "get/branches",
                     method: "GET",
                 });

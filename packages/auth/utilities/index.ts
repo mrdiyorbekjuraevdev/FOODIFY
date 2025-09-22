@@ -14,10 +14,9 @@ export const refresh = createRefresh({
     //@ts-ignore
     refreshApiCallback: async (param) => {
         try {
-            const { data } = await httpClient.post<TData>("refresh", param, {
+            const { data } = await httpClient.post<TData>("refresh", { refresh_token: param.refreshToken }, {
                 headers: { Authorization: `Bearer ${param.authToken}` },
             });
-            console.log("refreshed", data); 
             return {
                 isSuccess: true,
                 newAuthToken: get(data, "data.access_token"),

@@ -46,7 +46,7 @@ class ApiErrorHandler {
 /**
  * Centralized HTTP client for making API requests
  */
-class HttpClient {
+export class HttpClient {
 	private baseURL: string;
 	private authToken: string | null;
 

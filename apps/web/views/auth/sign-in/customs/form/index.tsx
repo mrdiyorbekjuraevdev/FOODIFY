@@ -51,7 +51,7 @@ export const Form = memo(() => {
     const initialValues = useMemo<ISignInForm>(() => {
         return {
             phone: "+998882167555",
-            password: "SuperSecret123!",
+            password: "123456",
             rememberMe: true,
         };
     }, []);

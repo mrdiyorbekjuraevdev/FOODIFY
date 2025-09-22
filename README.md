@@ -1,40 +1,41 @@
----
-title: 'Foodify'
-description: 'Welcome to the home of your new documentation'
----
-
-<img
-  className="block dark:hidden"
-  src="/images/hero-light.svg"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/hero-dark.svg"
-  alt="Hero Dark"
-/>
-
-## Setting up
-
-The first step to world-class documentation is setting up your editing environments.
-
-<CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
-  </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
-  </Card>
-</CardGroup>
-
-## Make it yours
-
-Update your docs to your brand and add valuable content for the best user conversion.
+$session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+$session.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+$session.Cookies.Add((New-Object System.Net.Cookie("__clerk_db_jwt", "dvb_30dFtI40v2q9HlD9Q7sazIDoAV6", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("__clerk_db_jwt_24_c4YY-", "dvb_30dFtI40v2q9HlD9Q7sazIDoAV6", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("__stripe_mid", "1f810dba-7b8a-4c1b-84ee-c98018b8c30f1294fa", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("intercom-device-id-kppmhamu", "5761421a-589e-41fc-bb4d-614a066a728a", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("__refresh_24_c4YY-", "6NTQRxwAp7mJ0ng0PzTN", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("clerk_active_context", "sess_32bP4TukXWrMxWCTMcbjxZ6GmyG:org_30alVuQHLvTeibcLLJ8lc5Ye8ch", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("__session", "eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yb3JWS0dKTHAybjRCeXNraEFxVU1aQnpmTTYiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJleHAiOjE3NTc2ODYxNzksImZlYSI6Im86Y29tcGV0ZW5jaWVzLG86Z3JvdXBzLG86aW5pdGlhdGl2ZXMsbzppbnNpZ2h0cyxvOmtleV9yZXN1bHRzLG86bm90ZXMsbzpvYmplY3RpdmVzLG86b3JnYW5pemF0aW9udmFsdWVzLG86cGF0aHdheXMsbzpwZW9wbGUsbzpwZXJmb3JtYW5jZSxvOnJvbGVzLG86dGFza3MiLCJmdmEiOlswLC0xXSwiaWF0IjoxNzU3Njg2MTE5LCJpc01mYSI6ZmFsc2UsImlzcyI6Imh0dHBzOi8vcm9idXN0LXN1bmJlYW0tMzIuY2xlcmsuYWNjb3VudHMuZGV2IiwianRpIjoiMDBkMzk1MWU2ZDZjMzJjN2ZlNDkiLCJuYmYiOjE3NTc2ODYxMDksIm8iOnsiZnBtIjoiNzIyMTU5NjExNTkwNzQxMzYsNzMzNTk0NTI5ODQ3MTM0ODQsNzI3NjI1NjM1OTUyMDc0MzIsLTkyMjMzNzIwMzY4NTQ3NzU4MDgsMjUyMzQyOTAzMTUzMDk5MjY0LDcyMTk4NDUzOTMyODUxMjA4LDQ2ODM4ODg3ODQ2MTA4MjA4NzIsMTE1MjkyMTc3OTQ4NDc1MzkyMCwzODA3NjUzMTU4MTU5NjQ5NjEsNzIyMDcxNjUyNTUxNzczNTIsLTY5MDM3MzY3NTM3ODIyNTc2NjIsNjQ4NjYxMzE5NzcxMjI2Mzc2LDcyMTk4MzY4MzAyNDY1NTM2IiwiaWQiOiJvcmdfMzBhbFZ1UUhMdlRlaWJjTExKOGxjNVllOGNoIiwicGVyIjoiYWNjZXNzX215X3BhdGh3YXksYWRkX2V2aWRlbmNlLGFkZF9zdWJncm91cCxhZGRfdGFncyxhaV9nZW5lcmF0ZSxhc3NpZ25fcGVyc29uLGJ1bGtfYWlfZ2VuZXJhdGUsY2hhbmdlX2JpbyxjaGFuZ2VfZGVzY3JpcHRpb24sY2hhbmdlX2R1ZV9kYXRlLGNoYW5nZV9lbXBsb3ltZW50X3R5cGUsY2hhbmdlX2V2aWRlbmNlX3dlaWdodCxjaGFuZ2VfZnVsbF9uYW1lLGNoYW5nZV9ncm91cF9sZWFkLGNoYW5nZV9pZCxjaGFuZ2VfbG9jYXRpb24sY2hhbmdlX21hbmFnZXIsY2hhbmdlX25hbWUsY2hhbmdlX29uX2xlYXZlLGNoYW5nZV9vd25lcixjaGFuZ2VfcGFyZW50X2dyb3VwLGNoYW5nZV9wcml2YWN5LGNoYW5nZV9wcm9iYXRpb24sY2hhbmdlX3Jlc3BvbnNpYmlsaXRpZXMsY2hhbmdlX3JvbGUsY2hhbmdlX3N0YXJ0X2RhdGUsY2hhbmdlX3N0YXRlLGNoYW5nZV9zdHJhdGVnaWNfZmxhZyxjaGFuZ2VfdGl0bGUsY2hhbmdlX3R5cGUsY2hhbmdlX3dvcmtfbW9kZSxjcmVhdGUsY3JlYXRlX2Zyb21fdGVtcGxhdGUsY3JlYXRlX3N0YXR1c191cGRhdGUsY3JlYXRlX3RlbXBsYXRlLGRlbGV0ZSxkZWxldGVfdGVtcGxhdGUsZWRpdF9zdGF0dXNfdXBkYXRlLGVkaXRvcixsaW5rX2NvbXBldGVuY3ksbGlua19vYmplY3RpdmUsbWFuYWdlX2Fzc2lnbmVlcyxtYW5hZ2VfY29udHJpYnV0b3JzLG1hbmFnZV9ncm91cHMsbWFuYWdlX2xldmVscyxtYW5hZ2VfbWVtYmVycyxwdWJsaXNoLHJlYWQscmVtb3ZlX2V2aWRlbmNlLHJlbW92ZV9zdGF0dXNfdXBkYXRlLHJlbW92ZV9zdWJncm91cCxzZWxlY3RfdGFyZ2V0X3JvbGUsdGFrZV9zbmFwc2hvdF9wZXJzb24sdGFrZV9zbmFwc2hvdF9zZWxmLHVuYXNzaWduX3BlcnNvbix1bmxpbmtfY29tcGV0ZW5jeSx1cGRhdGUsdXBkYXRlX2N1cnJlbnRfdmFsdWUsdXNlX2FpX2dlbmVyYXRlLHVzZV9haV9pbXByb3ZlLHVzZXIsdmlld19hcmNoaXZlZF9zbmFwc2hvdHMsdmlld19rcl9zdWdnZXN0aW9uLHZpZXdfb3JnYW5pemF0aW9uLHZpZXdfcGVyc29uLHZpZXdfcm9sZXMsdmlld19zZWxmLHZpZXdfdGVhbSIsInJvbCI6ImFkbWluIiwic2xnIjoibXktdGVzdC1vcmctMTc1Mzg3MzU5MSJ9LCJvcmdJZCI6Im9yZ18zMGFsVnVRSEx2VGVpYmNMTEo4bGM1WWU4Y2giLCJwbGEiOiJvOmZyZWVfb3JnIiwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJzaWQiOiJzZXNzXzMyYlA0VHVrWFdyTXhXQ1RNY2JqeFo2R215RyIsInN0cyI6ImFjdGl2ZSIsInN1YiI6InVzZXJfMnB5VWRvRmdYVUZrb1ZzNGJpdndRTmV6UDFPIiwidXNlcklkIjoidXNlcl8ycHlVZG9GZ1hVRmtvVnM0Yml2d1FOZXpQMU8iLCJ2IjoyfQ.x1DVcjYBTzqb2XwilDfI58dWup__mTe37fsopmAgzxv84fXRQNFXc2uXdwsePPXGgIxCR_XZnrIGbKP0FVFmrm6DVGMRRO9nN8Yx8w5JKluvrpx7wcYGYC_cx3h160zOCjhAGIPpR9t88P2CDly_n-R-mRs-zzTwshOeYApl4xtVRZo_3sN2ss909XFobpotAdd5OAvRR6FXfjqNGw9eCTnMZUqKXt0p5_PXd33CRXDzNeVmN3MrF0IW1t-4h8RMCAVT6NOrSnMqB-QVukPerhtmgZsMUzDc2VoqwqtNSjjP9xyDtCyCHFbdVK_JchsAFAF3wti3_BQFlg19VoIygA", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("__session_24_c4YY-", "eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yb3JWS0dKTHAybjRCeXNraEFxVU1aQnpmTTYiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJleHAiOjE3NTc2ODYxNzksImZlYSI6Im86Y29tcGV0ZW5jaWVzLG86Z3JvdXBzLG86aW5pdGlhdGl2ZXMsbzppbnNpZ2h0cyxvOmtleV9yZXN1bHRzLG86bm90ZXMsbzpvYmplY3RpdmVzLG86b3JnYW5pemF0aW9udmFsdWVzLG86cGF0aHdheXMsbzpwZW9wbGUsbzpwZXJmb3JtYW5jZSxvOnJvbGVzLG86dGFza3MiLCJmdmEiOlswLC0xXSwiaWF0IjoxNzU3Njg2MTE5LCJpc01mYSI6ZmFsc2UsImlzcyI6Imh0dHBzOi8vcm9idXN0LXN1bmJlYW0tMzIuY2xlcmsuYWNjb3VudHMuZGV2IiwianRpIjoiMDBkMzk1MWU2ZDZjMzJjN2ZlNDkiLCJuYmYiOjE3NTc2ODYxMDksIm8iOnsiZnBtIjoiNzIyMTU5NjExNTkwNzQxMzYsNzMzNTk0NTI5ODQ3MTM0ODQsNzI3NjI1NjM1OTUyMDc0MzIsLTkyMjMzNzIwMzY4NTQ3NzU4MDgsMjUyMzQyOTAzMTUzMDk5MjY0LDcyMTk4NDUzOTMyODUxMjA4LDQ2ODM4ODg3ODQ2MTA4MjA4NzIsMTE1MjkyMTc3OTQ4NDc1MzkyMCwzODA3NjUzMTU4MTU5NjQ5NjEsNzIyMDcxNjUyNTUxNzczNTIsLTY5MDM3MzY3NTM3ODIyNTc2NjIsNjQ4NjYxMzE5NzcxMjI2Mzc2LDcyMTk4MzY4MzAyNDY1NTM2IiwiaWQiOiJvcmdfMzBhbFZ1UUhMdlRlaWJjTExKOGxjNVllOGNoIiwicGVyIjoiYWNjZXNzX215X3BhdGh3YXksYWRkX2V2aWRlbmNlLGFkZF9zdWJncm91cCxhZGRfdGFncyxhaV9nZW5lcmF0ZSxhc3NpZ25fcGVyc29uLGJ1bGtfYWlfZ2VuZXJhdGUsY2hhbmdlX2JpbyxjaGFuZ2VfZGVzY3JpcHRpb24sY2hhbmdlX2R1ZV9kYXRlLGNoYW5nZV9lbXBsb3ltZW50X3R5cGUsY2hhbmdlX2V2aWRlbmNlX3dlaWdodCxjaGFuZ2VfZnVsbF9uYW1lLGNoYW5nZV9ncm91cF9sZWFkLGNoYW5nZV9pZCxjaGFuZ2VfbG9jYXRpb24sY2hhbmdlX21hbmFnZXIsY2hhbmdlX25hbWUsY2hhbmdlX29uX2xlYXZlLGNoYW5nZV9vd25lcixjaGFuZ2VfcGFyZW50X2dyb3VwLGNoYW5nZV9wcml2YWN5LGNoYW5nZV9wcm9iYXRpb24sY2hhbmdlX3Jlc3BvbnNpYmlsaXRpZXMsY2hhbmdlX3JvbGUsY2hhbmdlX3N0YXJ0X2RhdGUsY2hhbmdlX3N0YXRlLGNoYW5nZV9zdHJhdGVnaWNfZmxhZyxjaGFuZ2VfdGl0bGUsY2hhbmdlX3R5cGUsY2hhbmdlX3dvcmtfbW9kZSxjcmVhdGUsY3JlYXRlX2Zyb21fdGVtcGxhdGUsY3JlYXRlX3N0YXR1c191cGRhdGUsY3JlYXRlX3RlbXBsYXRlLGRlbGV0ZSxkZWxldGVfdGVtcGxhdGUsZWRpdF9zdGF0dXNfdXBkYXRlLGVkaXRvcixsaW5rX2NvbXBldGVuY3ksbGlua19vYmplY3RpdmUsbWFuYWdlX2Fzc2lnbmVlcyxtYW5hZ2VfY29udHJpYnV0b3JzLG1hbmFnZV9ncm91cHMsbWFuYWdlX2xldmVscyxtYW5hZ2VfbWVtYmVycyxwdWJsaXNoLHJlYWQscmVtb3ZlX2V2aWRlbmNlLHJlbW92ZV9zdGF0dXNfdXBkYXRlLHJlbW92ZV9zdWJncm91cCxzZWxlY3RfdGFyZ2V0X3JvbGUsdGFrZV9zbmFwc2hvdF9wZXJzb24sdGFrZV9zbmFwc2hvdF9zZWxmLHVuYXNzaWduX3BlcnNvbix1bmxpbmtfY29tcGV0ZW5jeSx1cGRhdGUsdXBkYXRlX2N1cnJlbnRfdmFsdWUsdXNlX2FpX2dlbmVyYXRlLHVzZV9haV9pbXByb3ZlLHVzZXIsdmlld19hcmNoaXZlZF9zbmFwc2hvdHMsdmlld19rcl9zdWdnZXN0aW9uLHZpZXdfb3JnYW5pemF0aW9uLHZpZXdfcGVyc29uLHZpZXdfcm9sZXMsdmlld19zZWxmLHZpZXdfdGVhbSIsInJvbCI6ImFkbWluIiwic2xnIjoibXktdGVzdC1vcmctMTc1Mzg3MzU5MSJ9LCJvcmdJZCI6Im9yZ18zMGFsVnVRSEx2VGVpYmNMTEo4bGM1WWU4Y2giLCJwbGEiOiJvOmZyZWVfb3JnIiwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJzaWQiOiJzZXNzXzMyYlA0VHVrWFdyTXhXQ1RNY2JqeFo2R215RyIsInN0cyI6ImFjdGl2ZSIsInN1YiI6InVzZXJfMnB5VWRvRmdYVUZrb1ZzNGJpdndRTmV6UDFPIiwidXNlcklkIjoidXNlcl8ycHlVZG9GZ1hVRmtvVnM0Yml2d1FOZXpQMU8iLCJ2IjoyfQ.x1DVcjYBTzqb2XwilDfI58dWup__mTe37fsopmAgzxv84fXRQNFXc2uXdwsePPXGgIxCR_XZnrIGbKP0FVFmrm6DVGMRRO9nN8Yx8w5JKluvrpx7wcYGYC_cx3h160zOCjhAGIPpR9t88P2CDly_n-R-mRs-zzTwshOeYApl4xtVRZo_3sN2ss909XFobpotAdd5OAvRR6FXfjqNGw9eCTnMZUqKXt0p5_PXd33CRXDzNeVmN3MrF0IW1t-4h8RMCAVT6NOrSnMqB-QVukPerhtmgZsMUzDc2VoqwqtNSjjP9xyDtCyCHFbdVK_JchsAFAF3wti3_BQFlg19VoIygA", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("__client_uat_24_c4YY-", "1757686107", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("__client_uat", "1757686107", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("ph_phc_3DaQsukbYdRV6wTrZvylDmtrhThWF61OZc24xWZ3PpE_posthog", "%7B%22distinct_id%22%3A%220198bc98-04cd-7a3b-826b-e1734505c13b%22%2C%22%24sesid%22%3A%5B1757686128013%2C%2201993e41-4093-78e9-a0e0-5246d0d77551%22%2C1757686087827%5D%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22http%3A%2F%2Flocalhost%3A3001%2Fsign-in%3Fredirect_url%3Dhttp%253A%252F%252Flocalhost%253A3001%252F%22%7D%7D", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("Next-Locale", "en", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("remember_me", "true", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("__next_hmr_refresh_hash__", "18", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("sidebar_state", "false", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("_foodify_auth", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJPV05SREVNTyIsInBob25lIjoiKzk5ODg4MjE2NzU1NSIsInJlc19pZCI6Im1haW4iLCJpYXQiOjE3NTgzNjkzMDEsImV4cCI6MTc2MDk2MTMwMX0.IDbtq_dBRG_WBKqLaBOH_K982CkE3XcRJq-k0wqDt9k", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("_foodify_auth_type", "Bearer", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("_foodify_auth_state", "{%22user_id%22:%22OWNRDEMO%22%2C%22fullname%22:%22Demo%20Owner%22%2C%22phone%22:%22+998882167555%22%2C%22current_branch%22:%221%22%2C%22branches%22:[{%22branch_id%22:%221%22%2C%22branch%22:%22Main%20Branch%22%2C%22status%22:1}%2C{%22branch_id%22:%221366ae37%22%2C%22branch%22:%22Test7%22%2C%22status%22:1}]}", "/", "localhost")))
+$session.Cookies.Add((New-Object System.Net.Cookie("_foodify_auth_refresh", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJPV05SREVNTyIsImlhdCI6MTc1ODM2OTMwMSwiZXhwIjoxNzYwOTYxMzAxfQ.9MCsTAi8lvZ3zVWtnPQIS0USPg12Jfn6oJNKEIvpX_c", "/", "localhost")))
+Invoke-WebRequest -UseBasicParsing -Uri "http://localhost:3000/refresh" `
+-Method "POST" `
+-WebSession $session `
+-Headers @{
+"Accept"="application/json, text/plain, */*"
+  "Accept-Encoding"="gzip, deflate, br, zstd"
+  "Accept-Language"="en-US,en;q=0.9"
+  "Authorization"="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJPV05SREVNTyIsInBob25lIjoiKzk5ODg4MjE2NzU1NSIsInJlc19pZCI6Im1haW4iLCJpYXQiOjE3NTgzNjkzMDEsImV4cCI6MTc2MDk2MTMwMX0.IDbtq_dBRG_WBKqLaBOH_K982CkE3XcRJq-k0wqDt9k"
+  "DNT"="1"
+  "Origin"="http://localhost:3000"
+  "Referer"="http://localhost:3000/workers/cbdb754f"
+  "Sec-Fetch-Dest"="empty"
+  "Sec-Fetch-Mode"="cors"
+  "Sec-Fetch-Site"="same-origin"
+  "sec-ch-ua"="`"Not=A?Brand`";v=`"24`", `"Chromium`";v=`"140`""
+  "sec-ch-ua-mobile"="?0"
+  "sec-ch-ua-platform"="`"Windows`""
+} `
+-ContentType "application/json" `
+-Body "{`"authToken`":`"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJPV05SREVNTyIsInBob25lIjoiKzk5ODg4MjE2NzU1NSIsInJlc19pZCI6Im1haW4iLCJpYXQiOjE3NTgzNjkzMDEsImV4cCI6MTc2MDk2MTMwMX0.IDbtq_dBRG_WBKqLaBOH_K982CkE3XcRJq-k0wqDt9k`",`"authUserState`":{`"user_id`":`"OWNRDEMO`",`"fullname`":`"Demo Owner`",`"phone`":`"+998882167555`",`"current_branch`":`"1`",`"branches`":[{`"branch_id`":`"1`",`"branch`":`"Main Branch`",`"status`":1},{`"branch_id`":`"1366ae37`",`"branch`":`"Test7`",`"status`":1}]},`"refreshToken`":`"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJPV05SREVNTyIsImlhdCI6MTc1ODM2OTMwMSwiZXhwIjoxNzYwOTYxMzAxfQ.9MCsTAi8lvZ3zVWtnPQIS0USPg12Jfn6oJNKEIvpX_c`"}"

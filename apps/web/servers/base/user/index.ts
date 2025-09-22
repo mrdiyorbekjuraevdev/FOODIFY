@@ -1,7 +1,7 @@
 import { useFetch } from "@foodify/api/hooks/useFetch";
 import { useQuery } from "@foodify/api/query";
 import { toast } from "sonner";
-import { TData, TUser, TUserMe } from "@/types/base";
+import { TData, TDataSingle, TUser, TUserMe } from "@/types/base";
 import { QueryResult } from "@foodify/api/types";
 
 /**
@@ -82,11 +82,12 @@ export const useUserMeCache = (): TUserMeCache => {
     * Query for fetching current user data
     * @type {QueryResult<TUserMe>}
     */
+
     const user = useQuery({
         queryKey: ["user"],
         queryFn: async () => {
             try {
-                const { data } = await functionInvoke<TData<TUserMe>>({
+                const { data } = await functionInvoke<TDataSingle<TUserMe>>({
                     functionName: "get/me",
                     method: "GET",
                 });

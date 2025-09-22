@@ -26,11 +26,12 @@ const FoodifyAuthProvider = ({
 
     if (!store) return null;
 
-    
+
 
 
     return (
         <AuthProvider store={store}>
+            {/* @ts-ignore */}
             {children}
         </AuthProvider>
     )

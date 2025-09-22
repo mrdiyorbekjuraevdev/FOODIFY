@@ -10,22 +10,10 @@ import {
 } from "@foodify/design-system/components/dropdown";
 import { memo } from "react";
 import { usePathname } from "next/navigation";
-import { ReactNode, JSX } from "react";
 import { useRouter } from "next/navigation";
 import { useSidebar } from "@foodify/design-system/components/sidebar/customs/hook/useSidebar";
 import { cn } from "@foodify/design-system/lib/utils";
-
-export type TRoutes = {
-    id: number | string;
-    path?: string;
-    title?: string;
-    isPath?: boolean;
-    element?: React.ReactElement | Element | JSX.Element | ReactNode;
-    shouldHideWhenClosed?: boolean;
-    icon?: ReactNode;
-    hasChild?: boolean;
-    children?: TRoutes[];
-};
+import { TRoutes } from "../../../../../types/base";
 
 
 
@@ -36,6 +24,8 @@ export const CollapseItems = memo(
         const router = useRouter();
         const iconClasses =
             "text-xl text-default-500 pointer-events-none flex-shrink-0";
+
+        const isActive = pathname.includes(path!);
         return (
             <div className="flex gap-4 h-full items-center cursor-pointer">
                 {!open ? (
@@ -51,19 +41,19 @@ export const CollapseItems = memo(
                                 {icon}
                             </div>
                         </DropdownTrigger>
-                        <DropdownMenu variant="faded" aria-label="Dropdown menu with icons">
+                        <DropdownMenu aria-label="Dropdown menu with icons">
                             {children!.map((item, index) => (
                                 <DropdownItem
                                     key={index}
                                     startContent={<CopyDocumentIcon className={iconClasses} />}
-                                    onClick={() => router.push(`${path}/${item.path!}`)}
+                                    onClick={() => router.push(`${path}`)}
                                     className="text-white"
                                 >
                                     {item?.title}
                                 </DropdownItem>
                             ))}
                         </DropdownMenu>
-                    </Dropdown>
+                    </Dropdown >
                 ) : (
                     <Accordion className="px-0 rounded-none">
                         <AccordionItem
@@ -71,7 +61,7 @@ export const CollapseItems = memo(
                             classNames={{
                                 indicator: "data-[open=true]:-rotate-180",
                                 trigger:
-                                    "py-0 min-h-[44px] hover:bg-[#60D43114]  active:scale-[0.98] transition-transform px-3.5",
+                                    cn("py-0 min-h-[44px] hover:bg-[#60D43114]  active:scale-[0.98] transition-transform px-3.5", isActive && "bg-[#60D43114] text-[#60D431]"),
 
                                 title:
                                     "px-0 flex text-base gap-2 h-full items-center cursor-pointer",
@@ -79,26 +69,33 @@ export const CollapseItems = memo(
                             aria-label="Accordion 1"
                             title={
                                 <div className="flex flex-row items-center gap-2">
-                                    <span>{icon}</span>
+                                    <span className={cn(isActive && "active-icon")}>{icon}</span>
                                     {<span className="text-lg text-white">{title}</span>}
                                 </div>
                             }
                         >
-                            <div className="pl-12">
+                            <div className="pl-4 pr-2 relative space-y-2">
                                 {children!.map((item, index) => (
-                                    <span
-                                        key={index}
-                                        className={`w-full flex  text-default-500 hover:text-default-900 transition-colors  ${pathname.startsWith(`${path}/${item.path}`!) && "text-[#60D431]"}`}
-                                        onClick={() => router.push(`${path}/${item.path!}`)}
-                                    >
-                                        {item?.title}
-                                    </span>
+                                    <div key={index} className={cn(`w-full flex items-center gap-2 p-2 rounded-lg  text-default-500 transition-colors hover:bg-[#60D43114] hover:text-[#60D431]`, pathname.includes(item?.path!) && "bg-[#60D43114] text-white")}>
+                                        <span>{item?.icon}</span>
+                                        <span
+                                            key={index}
+
+                                            onClick={() => {
+                                                router.push(`${path}${item?.path}`)
+                                            }}
+                                        >
+                                            {item?.title}
+                                        </span>
+                                    </div>
                                 ))}
+                                <span className="absolute bottom-0 w-[4px] h-fit bg-red-100 left-0" />
                             </div>
                         </AccordionItem>
                     </Accordion>
-                )}
-            </div>
+                )
+                }
+            </div >
         );
     },
 );
