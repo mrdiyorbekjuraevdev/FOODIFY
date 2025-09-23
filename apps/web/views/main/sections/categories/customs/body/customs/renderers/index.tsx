@@ -34,7 +34,7 @@ const ActionsRenderer = memo(({ category }: { category: TCategory }) => {
 
         if (ok) {
             confirm.setLoading(true);
-            await onRemove({ categories_ids: [category?.category_id] });
+            await onRemove({ category_ids: [category?.category_id] });
             confirm.setLoading(false);
             addToast({
                 title: "Category removed",
