@@ -4,6 +4,9 @@ import { TDataSingle } from "@/types/base";
 import { dehydrate } from "@foodify/api/query";
 import { serverApi } from "@foodify/api/lib/server-client";
 import { cookies } from "next/headers";
+import { TDepartment } from "@/types/main/departments";
+import { TCategory } from "@/types/main/categories";
+import { TStorage } from "@/types/main/storages";
 
 export const utilitiesCache = async () => {
     const queryClient = getQueryClient();
@@ -83,6 +86,80 @@ export const workerCache = async (params: { branch_id: string, id: string }) => 
             try {
                 const { data } = await serverApi<TDataSingle<TUser[]>>({
                     functionName: `${params.branch_id}/get/user/${params.id}`,
+                    method: "GET",
+                    token: cookieStore.get("_foodify_auth")?.value,
+                });
+                return data?.data;
+            } catch (error: unknown) {
+                console.log(error)
+            }
+        },
+        staleTime: Infinity,
+    });
+
+    return dehydrate(queryClient);
+};
+
+export const departmentsCache = async (params: { branch_id: string, search: string, page: number }) => {
+    const queryClient = getQueryClient();
+    const cookieStore = await cookies();
+
+    await queryClient?.prefetchQuery({
+        queryKey: [`${params.branch_id}/DEPARTMENTS?search=${params.search}&page=${params.page}&pageSize=10`],
+        queryFn: async () => {
+            try {
+                const { data } = await serverApi<TDataSingle<TDepartment[]>>({
+                    functionName: `${params.branch_id}/get/departments?search=${params.search}&page=${params.page}&pageSize=10`,
+                    method: "GET",
+                    token: cookieStore.get("_foodify_auth")?.value,
+                });
+                return data?.data;
+            } catch (error: unknown) {
+                console.log(error)
+            }
+        },
+        staleTime: Infinity,
+    });
+
+    return dehydrate(queryClient);
+};
+
+export const categoriesCache = async (params: { branch_id: string, search: string, page: number }) => {
+    const queryClient = getQueryClient();
+    const cookieStore = await cookies();
+
+    await queryClient?.prefetchQuery({
+        queryKey: [`${params.branch_id}/CATEGORIES?search=${params.search}&page=${params.page}&pageSize=10`],
+        queryFn: async () => {
+            try {
+                const { data } = await serverApi<TDataSingle<TCategory[]>>({
+                    functionName: `${params.branch_id}/get/categories?search=${params.search}&page=${params.page}&pageSize=10`,
+                    method: "GET",
+                    token: cookieStore.get("_foodify_auth")?.value,
+                });
+                return data?.data;
+            } catch (error: unknown) {
+                console.log(error)
+            }
+        },
+        staleTime: Infinity,
+    });
+
+    return dehydrate(queryClient);
+};
+
+
+
+export const storagesCache = async (params: { branch_id: string, search: string, page: number }) => {
+    const queryClient = getQueryClient();
+    const cookieStore = await cookies();
+
+    await queryClient?.prefetchQuery({
+        queryKey: [`${params.branch_id}/STORAGES?search=${params.search}&page=${params.page}&pageSize=10`],
+        queryFn: async () => {
+            try {
+                const { data } = await serverApi<TDataSingle<TStorage[]>>({
+                    functionName: `${params.branch_id}/get/storages?search=${params.search}&page=${params.page}&pageSize=10`,
                     method: "GET",
                     token: cookieStore.get("_foodify_auth")?.value,
                 });

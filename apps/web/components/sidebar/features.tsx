@@ -1,7 +1,7 @@
 import { useUserMeCache } from "@/servers/base/user";
 import { useMemo } from "react";
 import { HomeIcon } from "@/assets/icons/sidebar/home.icon";
-import { Archive } from "lucide-react";
+import { Archive, List, SquareLibrary } from "lucide-react";
 import { PermissionAction, TRoutes } from "@/types/base";
 
 export const useSidebarFeatures = () => {
@@ -53,9 +53,18 @@ export const useSidebarFeatures = () => {
                 hasChild: false,
                 children: [
                     {
+                        path: "/departments",
+                        title: "Departments",
+                        icon: <SquareLibrary size={16} strokeWidth={1.5} />,
+                        id: 22,
+                        hasChild: false,
+                        children: [],
+                        resource: "department",
+                    },
+                    {
                         path: "/categories",
                         title: "Categories",
-                        icon: <Archive size={16} strokeWidth={1.5} />,
+                        icon: <List strokeWidth={1.5} size={16} />,
                         id: 22,
                         hasChild: false,
                         children: [],

@@ -10,6 +10,7 @@ import { TStorage } from "@/types/main/storages";
 import { Typography } from "@foodify/design-system/components/typography";
 import { useStorageStore } from "@/stores/main/storages";
 import { useStoragesFeatures } from "../../../../features";
+import { Button } from "@foodify/design-system/components/button";
 
 const NameRenderer = memo(({ storage }: { storage: TStorage }) => (
     <div className="gap-2 grid">
@@ -20,7 +21,7 @@ const NameRenderer = memo(({ storage }: { storage: TStorage }) => (
 
 
 const ActionsRenderer = memo(({ storage }: { storage: TStorage }) => {
-    const { openModal } = useStorageStore();
+    const { openModal, openCanvas } = useStorageStore();
     const { onRemoveStorage: { mutateAsync: onRemove } } = useStoragesFeatures();
     const confirm = useConfirm();
     const { setSelectedKeys } = useStorageStore();
@@ -46,7 +47,8 @@ const ActionsRenderer = memo(({ storage }: { storage: TStorage }) => {
         }
     };
 
-    return <div className="flex items-center justify-end">
+    return <div className="flex items-center justify-end gap-2">
+        <Button variant="solid" color="primary" size='sm' onPress={() => openCanvas()}>Details</Button>
         <div className="flex items-center gap-2">
             <Tooltip content="Edit storage" >
                 <span className="text-lg text-default-400 cursor-pointer active:opacity-50" onClick={(e) => {
