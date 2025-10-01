@@ -64,7 +64,7 @@
   "devDependencies": {
     "@foodify/typescript-config": "workspace:*",
     "@next/eslint-plugin-next": "15.3.4",
-    "@react-types/shared": "3.30.0",
+    "@react-types/shared": "3.32.0",
     "@tailwindcss/postcss": "4.1.11",
     "@types/node": "20.5.7",
     "@types/react": "19.1.5",
